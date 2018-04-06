@@ -17,11 +17,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="perm_retriever_button_ask_again">Повторить</string>
     <string name="perm_retriever_button_settings">Настройки</string>
-    <string name="perm_retriever_button_cancel">@android:string/cancel</string>
+    <string name="perm_retriever_button_cancel">Отмена</string>
 
     <plurals name="perm_retriever_message_denied" tools:ignore="MissingQuantity">
-        <item quantity="one" tools:ignore="ImpliedQuantity">Для исправной работы приложения нам необходимо это разрешение:\n</item>
-        <item quantity="many">Для исправной работы приложения нам необходимы эти разрешения:\n</item>
+        <item quantity="one" tools:ignore="ImpliedQuantity">Для правильной работы приложения нам необходимо это разрешение:\n</item>
+        <item quantity="many">Для правильной работы приложения нам необходимы эти разрешения:\n</item>
     </plurals>
 
     <plurals name="perm_retriever_title_denied" tools:ignore="MissingQuantity">

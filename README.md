@@ -43,9 +43,28 @@ public class SomeClass { /* extends android.app.Activity or android.app.Fragment
 Global settings
 ```java
 private void setRetrieverGlobalSettings() {
-    PermissionRetriever.Global.setSilentMode(true); // default false
-    PermissionRetriever.Global.setLoggingEnabled(true); // default false
+    PermissionRetriever.Global.setSilentMode(true); // false by default
+    PermissionRetriever.Global.setLoggingEnabled(true); // false by default
 }
+```
+
+In-box we are supports only two translations: English and Russian. Below you can see used string resources. You can change or translate they how you need
+```xml
+<resources>
+    <string name="perm_retriever_button_ask_again">Ask again</string>
+    <string name="perm_retriever_button_settings">Settings</string>
+    <string name="perm_retriever_button_cancel">Cancel</string>
+
+    <plurals name="perm_retriever_message_denied">
+        <item quantity="one">For correctly app working we need to you grant this permission:\n</item>
+        <item quantity="many">For correctly app working we need to you grant this permissions list:\n</item>
+    </plurals>
+
+    <plurals name="perm_retriever_title_denied">
+        <item quantity="one">You have denied permission</item>
+        <item quantity="many">You have denied permissions</item>
+    </plurals>
+</resources>
 ```
 
 License
