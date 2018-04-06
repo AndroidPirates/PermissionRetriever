@@ -215,6 +215,8 @@ public class PermissionRetriever {
      * @param caller an object who can be instantiated from {@link android.app.Fragment}
      *               or {@link android.support.v4.app.Fragment}
      *               or {@link android.app.Activity}
+     * @see #run(Object, Runnable)
+     * @see #run(Object, Runnable, Runnable)
      */
     public void run(@NonNull Object caller) {
         run(caller, null);
@@ -229,7 +231,7 @@ public class PermissionRetriever {
      *                  or {@link android.app.Activity}
      * @param ifGranted the runnable who will be invoked when a user will accept the requested
      *                  permissions
-     * @see #run(Object, Runnable)
+     * @see #run(Object)
      * @see #run(Object, Runnable, Runnable)
      */
     public void run(@NonNull Object caller, @Nullable Runnable ifGranted) {
@@ -280,7 +282,7 @@ public class PermissionRetriever {
      *
      * @param requestCode a request code delegated from {@code onPermissionResult} of your
      *                    {@code Fragment} or {@code Activity}
-     * @return true if {@code requestCode} is equaled {@link #REQUEST_PERMISSIONS_CODE} and
+     * @return {@code true} if {@code requestCode} is equaled {@link #REQUEST_PERMISSIONS_CODE} and
      * {@code PermissionRetriever} will do some stuff
      */
     public boolean onPermissionResult(int requestCode) {
