@@ -55,6 +55,7 @@ afterEvaluate { project ->
 }
 
 signing {
+    required { gradle.taskGraph.hasTask("bintrayUpload") }
     sign configurations.archives
 }
 
