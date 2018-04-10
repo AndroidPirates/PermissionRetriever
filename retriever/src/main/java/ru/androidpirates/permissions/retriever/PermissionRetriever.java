@@ -314,14 +314,13 @@ public class PermissionRetriever {
      */
     public void clear() {
         mPermissionsRationalesMap.clear();
-        mIsSilentMode = false;
         mFragment = null;
-        mIsSilentMode = null;
-        mIsLoggingEnabled = null;
         mAppCompatFragment = null;
         mActivity = null;
         mPendingIfGrantedAction = null;
         mPendingIfUnacceptedAction = null;
+        mIsSilentMode = null;
+        mIsLoggingEnabled = null;
         mIsRewriteProtectionDisabled = true;
     }
 
