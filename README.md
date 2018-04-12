@@ -48,7 +48,7 @@ private void setRetrieverGlobalSettings() {
 }
 ```
 
-In-box we are supports only two translations: English and Russian. Below you can see used string resources. You can change or translate they how you need
+In-box we support only two translations: English and Russian. Below you can see used string resources. You can change or translate they how you need
 ```xml
 <resources>
     <string name="perm_retriever_button_ask_again">Ask again</string>
