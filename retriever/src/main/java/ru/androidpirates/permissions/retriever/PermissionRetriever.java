@@ -25,7 +25,6 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.PluralsRes;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -493,8 +492,11 @@ public class PermissionRetriever {
 
     private AlertDialog.Builder prepareDialog() {
         int permCount = mPermissionsRationalesMap.size();
-        StringBuilder message = new StringBuilder(
-                getPlurals(R.plurals.perm_retriever_message_denied, permCount));
+        StringBuilder message = new StringBuilder(getQuantity(
+                R.string.perm_retriever_message_denied_one,
+                R.string.perm_retriever_message_denied_many,
+                permCount
+        ));
 
         for (Map.Entry<String, Object> entry : mPermissionsRationalesMap.entrySet()) {
             message.append("\n").append(cutPermissionName(entry.getKey()));
@@ -514,7 +516,11 @@ public class PermissionRetriever {
             }
         }
         return new AlertDialog.Builder(getContext())
-                .setTitle(getPlurals(R.plurals.perm_retriever_title_denied, permCount))
+                .setTitle(getQuantity(
+                        R.string.perm_retriever_title_denied_one,
+                        R.string.perm_retriever_title_denied_many,
+                        permCount
+                ))
                 .setMessage(message)
                 .setOnCancelListener(d -> runUnaccepted())
                 .setNegativeButton(R.string.perm_retriever_button_cancel, (d, i) ->
@@ -542,8 +548,8 @@ public class PermissionRetriever {
         }
     }
 
-    private String getPlurals(@PluralsRes int id, int quantity) {
-        return getContext().getResources().getQuantityString(id, quantity);
+    private String getQuantity(@StringRes int oneId , @StringRes int manyId, int quantity) {
+        return getContext().getString(quantity > 1 ? manyId : oneId);
     }
 
     public static class Global {
